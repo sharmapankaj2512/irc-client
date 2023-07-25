@@ -33,13 +33,7 @@ class IrcClient
   def register(name, nickname)
     @nickname = nickname
     nick_command(nickname)
-    @socket.puts("USER #{nickname} 0 * : #{name}")
-    while (line = @socket.gets) # Read lines from the @socket
-      @lines += line.chop
-      if line.include? ":End of /MOTD command."
-        break
-      end
-    end
+    user_command(name, nickname)
   end
 
   def registered
@@ -53,6 +47,16 @@ class IrcClient
   end
 
   private
+
+  def user_command(name, nickname)
+    @socket.puts("USER #{nickname} 0 * : #{name}")
+    while (line = @socket.gets) # Read lines from the @socket
+      @lines += line.chop
+      if line.include? ":End of /MOTD command."
+        break
+      end
+    end
+  end
 
   def nick_command(nickname)
     @lines = ""
