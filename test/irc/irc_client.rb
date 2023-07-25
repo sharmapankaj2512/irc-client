@@ -3,14 +3,15 @@
 require "timeout"
 
 class IrcClient
-  def initialize(host, port)
+  def initialize(host, port, timeout)
     @host = host
     @port = port
+    @timeout = timeout
     @lines = ""
   end
 
   def connect
-    socket = Timeout.timeout(300) do
+    socket = Timeout.timeout(@timeout) do
       TCPSocket.open(@host, @port)
     end
     while (line = socket.gets) # Read lines from the socket
