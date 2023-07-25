@@ -18,4 +18,11 @@ class IrcConnectTest < Minitest::Test
 
     refute(client.connected)
   end
+
+  def test_no_connection_for_invalid_host
+    client = IrcClient.new("localhost", 6667, 10)
+    client.connect
+
+    refute(client.connected)
+  end
 end

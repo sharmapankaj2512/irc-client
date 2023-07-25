@@ -18,6 +18,10 @@ class IrcClient
       @lines += line.chop
     end
     socket.close
+  rescue Timeout::Error => e
+    @lines = ""
+  rescue Errno::ECONNREFUSED => e
+    @lines = ""
   end
 
   def connected
