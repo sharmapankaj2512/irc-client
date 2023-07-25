@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "timeout"
+require "socket"
 
 class IrcClient
   def initialize(host, port, timeout)
@@ -8,16 +9,17 @@ class IrcClient
     @port = port
     @timeout = timeout
     @lines = ""
+    @socket = make_socket
   end
 
   def connect
-    socket = Timeout.timeout(@timeout) do
-      TCPSocket.open(@host, @port)
-    end
-    while (line = socket.gets) # Read lines from the socket
+    while (line = @socket.gets) # Read lines from the @socket
       @lines += line.chop
+      if line.include? "Couldn't look up your hostname"
+        break
+      end
     end
-    socket.close
+
   rescue Timeout::Error => e
     @lines = ""
   rescue Errno::ECONNREFUSED => e
@@ -26,5 +28,25 @@ class IrcClient
 
   def connected
     @lines.include? "NOTICE"
+  end
+
+  def register(name, nickname)
+    puts @lines
+    @lines = ""
+    socket_puts = @socket.puts("NICK #{nickname}")
+    while (line = @socket.gets) # Read lines from the @socket
+      @lines += line.chop
+    end
+    puts @lines
+  end
+
+  def registered
+    @lines.include? "NOTICE * :*** No Ident response"
+  end
+
+  def make_socket
+    Timeout.timeout(@timeout) do
+      TCPSocket.open(@host, @port)
+    end
   end
 end
