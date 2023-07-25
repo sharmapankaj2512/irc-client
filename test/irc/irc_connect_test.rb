@@ -5,7 +5,7 @@ require "minitest/autorun"
 require "socket"
 
 class IrcConnectTest < Minitest::Test
-  def test_connection
+  def test_successful_connection
     client = IrcClient.new("irc.libera.chat", 6667)
     client.connect
 
