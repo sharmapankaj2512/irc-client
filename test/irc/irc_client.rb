@@ -31,11 +31,19 @@ class IrcClient
   end
 
   def register(name, nickname)
+    @nickname = nickname
     nick_command(nickname)
+    @socket.puts("USER #{nickname} 0 * : #{name}")
+    while (line = @socket.gets) # Read lines from the @socket
+      @lines += line.chop
+      if line.include? ":End of /MOTD command."
+        break
+      end
+    end
   end
 
   def registered
-    @lines.include? "NOTICE * :*** No Ident response"
+    @lines.include? "NOTICE * :*** No Ident response" and @lines.include? ":Welcome"
   end
 
   def make_socket
@@ -51,6 +59,9 @@ class IrcClient
     @socket.puts("NICK #{nickname}")
     while (line = @socket.gets) # Read lines from the @socket
       @lines += line.chop
+      if line.include? "NOTICE * :*** No Ident response"
+        break
+      end
     end
   end
 end
