@@ -31,13 +31,7 @@ class IrcClient
   end
 
   def register(name, nickname)
-    puts @lines
-    @lines = ""
-    socket_puts = @socket.puts("NICK #{nickname}")
-    while (line = @socket.gets) # Read lines from the @socket
-      @lines += line.chop
-    end
-    puts @lines
+    nick_command(nickname)
   end
 
   def registered
@@ -47,6 +41,16 @@ class IrcClient
   def make_socket
     Timeout.timeout(@timeout) do
       TCPSocket.open(@host, @port)
+    end
+  end
+
+  private
+
+  def nick_command(nickname)
+    @lines = ""
+    @socket.puts("NICK #{nickname}")
+    while (line = @socket.gets) # Read lines from the @socket
+      @lines += line.chop
     end
   end
 end
