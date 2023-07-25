@@ -6,7 +6,7 @@ class IrcClient
     @port = port
   end
 
-  def open_connection
+  def connect
     socket = TCPSocket.open(@host, @port)
     lines = ""
     while (line = socket.gets) # Read lines from the socket
