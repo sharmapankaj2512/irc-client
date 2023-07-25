@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "timeout"
+
 class IrcClient
   def initialize(host, port)
     @host = host
@@ -8,7 +10,9 @@ class IrcClient
   end
 
   def connect
-    socket = TCPSocket.open(@host, @port)
+    socket = Timeout.timeout(300) do
+      TCPSocket.open(@host, @port)
+    end
     while (line = socket.gets) # Read lines from the socket
       @lines += line.chop
     end

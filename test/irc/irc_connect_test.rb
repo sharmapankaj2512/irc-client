@@ -11,4 +11,11 @@ class IrcConnectTest < Minitest::Test
 
     assert client.connected
   end
+
+  def test_no_connection_for_invalid_port
+    client = IrcClient.new("irc.libera.chat", 666)
+    client.connect
+
+    refute(client.connected)
+  end
 end
