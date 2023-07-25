@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require_relative 'irc_client.rb'
+require_relative 'irc_client'
 require "minitest/autorun"
 require 'socket'
 
 class IrcConnectTest < Minitest::Test
   def test_connection
-    client = IrcClient.new
-    response = client.open_connection("irc.libera.chat", 6667)
+    client = IrcClient.new("irc.libera.chat", 6667)
+    response = client.open_connection
 
     assert_includes response, "NOTICE"
   end
