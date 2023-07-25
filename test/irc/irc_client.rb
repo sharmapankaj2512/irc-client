@@ -13,17 +13,14 @@ class IrcClient
   end
 
   def connect
+    return if @socket.nil?
+
     while (line = @socket.gets) # Read lines from the @socket
       @lines += line.chop
       if line.include? "Couldn't look up your hostname"
         break
       end
     end
-
-  rescue Timeout::Error => e
-    @lines = ""
-  rescue Errno::ECONNREFUSED => e
-    @lines = ""
   end
 
   def connected
@@ -41,8 +38,16 @@ class IrcClient
   end
 
   def make_socket
-    Timeout.timeout(@timeout) do
-      TCPSocket.open(@host, @port)
+    begin
+      Timeout.timeout(@timeout) do
+        TCPSocket.open(@host, @port)
+      end
+    rescue Timeout::Error
+      @lines = ""
+      nil
+    rescue Errno::ECONNREFUSED
+      @lines = ""
+      nil
     end
   end
 
