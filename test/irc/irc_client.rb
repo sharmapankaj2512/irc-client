@@ -16,14 +16,8 @@ class IrcClient
   def register(nickname)
     @socket.puts "NICK #{nickname}"
     @socket.puts "USER #{nickname} 0 * : #{nickname}"
-    until @socket.eof?
-      line = @socket.gets
-      puts line
-      if line.include? ":End of /MOTD command"
-        @registered = true
-        break
-      end
-    end
+    notice_commands = read_lines_until(":End of /MOTD command")
+    @registered = notice_commands.length.positive?
   end
 
   attr_reader :connected, :registered
