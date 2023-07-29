@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="socket error">
-      <change afterPath="$PROJECT_DIR$/test/irc/irc_list_channels_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="has_channels">
       <change beforePath="$PROJECT_DIR$/test/irc/irc_client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/irc/irc_client.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +45,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.IrcListChannelsTest">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.All tests in test: irc-client">
     <configuration name="irc_client" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="irc-client" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -185,9 +183,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: irc-client" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.IrcListChannelsTest" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_list_channels" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: irc-client" />
         <item itemvalue="Ruby.irc_client" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_register_user" />
       </list>
@@ -206,7 +204,7 @@
       <workItem from="1690285376964" duration="2939000" />
       <workItem from="1690289289380" duration="74000" />
       <workItem from="1690289428498" duration="3681000" />
-      <workItem from="1690640794462" duration="1185000" />
+      <workItem from="1690640794462" duration="1668000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1690276376505</created>
@@ -341,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690639556433</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="has_channels">
+      <created>1690642250358</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1690642250358</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +382,8 @@
     <MESSAGE value="invalid port" />
     <MESSAGE value="xm" />
     <MESSAGE value="socket error" />
-    <option name="LAST_COMMIT_MESSAGE" value="socket error" />
+    <MESSAGE value="has_channels" />
+    <option name="LAST_COMMIT_MESSAGE" value="has_channels" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/irc_client@test_no_connection_for_invalid_port.rcov" NAME="test_no_connection_for_invalid_port Coverage Results" MODIFIED="1690283249232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
@@ -386,12 +392,12 @@
     <SUITE FILE_PATH="coverage/irc_client@irc_client.rcov" NAME="irc_client Coverage Results" MODIFIED="1690641170079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_register_test_rb__1_.rcov" NAME="irc_register_test.rb (1) Coverage Results" MODIFIED="1690294215305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_list_channels.rcov" NAME="test_list_channels Coverage Results" MODIFIED="1690641376819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
-    <SUITE FILE_PATH="coverage/irc_client@All_tests_in_test__irc_client.rcov" NAME="All tests in test: irc-client Coverage Results" MODIFIED="1690641177520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@All_tests_in_test__irc_client.rcov" NAME="All tests in test: irc-client Coverage Results" MODIFIED="1690642427316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_successful_connection.rcov" NAME="test_successful_connection Coverage Results" MODIFIED="1690638071242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_avoid_disconnection.rcov" NAME="test_avoid_disconnection Coverage Results" MODIFIED="1690396860691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_register_user.rcov" NAME="test_register_user Coverage Results" MODIFIED="1690640274440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_connection.rcov" NAME="test_connection Coverage Results" MODIFIED="1690281610727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
-    <SUITE FILE_PATH="coverage/irc_client@IrcListChannelsTest.rcov" NAME="IrcListChannelsTest Coverage Results" MODIFIED="1690641781907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@IrcListChannelsTest.rcov" NAME="IrcListChannelsTest Coverage Results" MODIFIED="1690642217660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_client_not_connected.rcov" NAME="test_client_not_connected Coverage Results" MODIFIED="1690638854876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_connection_test_rb.rcov" NAME="irc_connection_test.rb Coverage Results" MODIFIED="1690639790884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_connection_remains_alive.rcov" NAME="test_connection_remains_alive Coverage Results" MODIFIED="1690637618436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
