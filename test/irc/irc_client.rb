@@ -14,7 +14,7 @@ class IrcClient
   end
 
   def register(nickname)
-    @socket.puts "NICK #{nickname}"
+    send_command("NICK #{nickname}")
     @socket.puts "USER #{nickname} 0 * : #{nickname}"
     notice_commands = read_lines_until(":End of /MOTD command")
     @registered = notice_commands.length.positive?
@@ -40,6 +40,10 @@ class IrcClient
   end
 
   private
+
+  def send_command(string_frozen_)
+    @socket.puts string_frozen_
+  end
 
   def replied_with_notice
     read_lines_until("NOTICE").length.positive?
