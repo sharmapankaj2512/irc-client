@@ -32,13 +32,12 @@ class IrcClient
     @socket = Timeout.timeout(10) do
       TCPSocket.new(host, port)
     end
-    @connected = read_lines_until("NOTICE").length.positive?
+    @connected = replied_with_notice
   end
 
   def has_channels
     @socket.puts("LIST")
-    string_frozen_ = ":End of /LIST"
-    @lines = read_lines_until(string_frozen_)
+    @lines = read_lines_until(":End of /LIST")
     puts @lines
     @lines.length.positive?
   end
@@ -48,6 +47,10 @@ class IrcClient
   end
 
   private
+
+  def replied_with_notice
+    read_lines_until("NOTICE").length.positive?
+  end
 
   def read_lines_until(string_frozen_)
     lines = []
