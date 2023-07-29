@@ -29,10 +29,11 @@ class IrcClient
   attr_reader :connected, :registered
 
   def connect(host, port)
-    @socket = Timeout::timeout(10) do
+    @socket = Timeout.timeout(10) do
       TCPSocket.new(host, port)
     end
-    @connected = read_until("NOTICE")
+    lines = read_lines_until("NOTICE")
+    @connected = lines.length.positive?
   end
 
   def has_channels
@@ -41,11 +42,6 @@ class IrcClient
     @lines = read_lines_until(string_frozen_)
     puts @lines
     @lines.length.positive?
-  end
-
-  def read_until(string_frozen_)
-    lines = read_lines_until(string_frozen_)
-    lines[0].include? string_frozen_
   end
 
   def no_more_messages
