@@ -14,9 +14,9 @@ class IrcClient
   end
 
   def register(nickname)
-    send_command"NICK #{nickname}"
-    send_command"USER #{nickname} 0 * : #{nickname}"
-    notice_commands = read_lines_until(":End of /MOTD command")
+    send_command "NICK #{nickname}"
+    send_command "USER #{nickname} 0 * : #{nickname}"
+    notice_commands = read_lines_until ":End of /MOTD command"
     @registered = notice_commands.length.positive?
   end
 
