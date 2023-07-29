@@ -39,4 +39,16 @@ class IrcClient
       break if @connected
     end
   end
+
+  def has_channels
+    @socket.puts("LIST")
+    @lines = []
+    until @socket.eof?
+      line = @socket.gets
+      @lines.append(line)
+      break if line.include?(":End of /LIST")
+    end
+    puts @lines
+    @lines.length.positive?
+  end
 end
