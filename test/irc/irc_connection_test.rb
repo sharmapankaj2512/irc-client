@@ -14,12 +14,20 @@ class IrcConnectionTest < Minitest::Test
 
     refute client.connected
   end
+
+  def test_invalid_host
+    client = IrcClient.new("irc.libera123.test", 6667)
+
+    refute client.connected
+  end
 end
 
 class IrcClient
   def initialize(host, port)
     begin
       connect(host, port)
+    rescue SocketError
+      @connected = false
     rescue Timeout::Error
       @connected = false
     end
