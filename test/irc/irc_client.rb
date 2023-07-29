@@ -32,8 +32,7 @@ class IrcClient
     @socket = Timeout.timeout(10) do
       TCPSocket.new(host, port)
     end
-    lines = read_lines_until("NOTICE")
-    @connected = lines.length.positive?
+    @connected = read_lines_until("NOTICE").length.positive?
   end
 
   def has_channels
