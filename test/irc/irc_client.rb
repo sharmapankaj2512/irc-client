@@ -37,9 +37,9 @@ class IrcClient
 
   def has_channels
     @socket.puts("LIST")
-    @lines = read_lines_until(":End of /LIST")
-    puts @lines
-    @lines.length.positive?
+    channels = read_lines_until(":End of /LIST")
+    puts channels
+    channels.length.positive?
   end
 
   def no_more_messages
