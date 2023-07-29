@@ -51,10 +51,9 @@ class IrcClient
     until no_more_messages
       line = @socket.gets
       puts line
-      @connected = line.include? string_frozen_
-      break if @connected
+      return true if line.include?(string_frozen_)
     end
-    @connected
+    false
   end
 
   def no_more_messages
