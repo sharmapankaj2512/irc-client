@@ -38,7 +38,6 @@ class IrcClient
   def has_channels
     @socket.puts("LIST")
     channels = read_lines_until(":End of /LIST")
-    puts channels
     channels.length.positive?
   end
 
@@ -59,6 +58,7 @@ class IrcClient
       lines.append(line)
       break if line.include?(string_frozen_)
     end
+    puts lines
     lines
   end
 end
