@@ -44,12 +44,8 @@ class IrcClient
   end
 
   def read_until(string_frozen_)
-    until no_more_messages
-      line = @socket.gets
-      puts line
-      return true if line.include?(string_frozen_)
-    end
-    false
+    lines = read_lines_until(string_frozen_)
+    lines[0].include? string_frozen_
   end
 
   def no_more_messages
