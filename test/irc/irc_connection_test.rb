@@ -19,12 +19,7 @@ end
 class IrcClient
   def initialize(host, port)
     begin
-      @socket = connect(host, port)
-      until @socket.eof?
-        line = @socket.gets
-        @connected = line.include? "NOTICE"
-        break if @connected
-      end
+      connect(host, port)
     rescue Timeout::Error
       @connected = false
     end
@@ -37,8 +32,13 @@ class IrcClient
   private
 
   def connect(host, port)
-    Timeout::timeout(10) do
+    @socket = Timeout::timeout(10) do
       TCPSocket.new(host, port)
+    end
+    until @socket.eof?
+      line = @socket.gets
+      @connected = line.include? "NOTICE"
+      break if @connected
     end
   end
 end
