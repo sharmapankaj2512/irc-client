@@ -32,7 +32,7 @@ class IrcClient
     @socket = Timeout::timeout(10) do
       TCPSocket.new(host, port)
     end
-    read_until("NOTICE")
+    @connected = read_until("NOTICE")
   end
 
   def has_channels
@@ -49,12 +49,12 @@ class IrcClient
 
   def read_until(string_frozen_)
     until no_more_messages
-
       line = @socket.gets
       puts line
       @connected = line.include? string_frozen_
       break if @connected
     end
+    @connected
   end
 
   def no_more_messages
