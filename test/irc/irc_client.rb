@@ -32,6 +32,9 @@ class IrcClient
   def has_channels
     send_command "LIST"
     channels = read_lines_until(":End of /LIST")
+    channels.each do |channel|
+      return false if channel.include? "ERROR :Closing Link:"
+    end
     channels.length.positive?
   end
 

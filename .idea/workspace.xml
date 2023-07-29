@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="ide s">
+    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="reuse method">
+      <change afterPath="$PROJECT_DIR$/test/irc/irc_keep_connection_alive_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/irc/irc_client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/irc/irc_client.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,24 +48,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.All tests in test: irc-client">
-    <configuration name="irc_client" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="irc-client" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/test/irc/irc_client.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <method v="2" />
-    </configuration>
     <configuration name="All tests in test: irc-client" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
       <module name="irc-client" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
@@ -88,6 +72,36 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/{*_test,test_*,*_spec}.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IrcKeepConnectionAliveTest" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="irc-client" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Ilib:test" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/irc/irc_keep_connection_alive_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/test/irc/irc_keep_connection_alive_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^IrcKeepConnectionAliveTest(#|::)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
@@ -154,7 +168,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_register_user" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="test_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="irc-client" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Ilib:test" />
@@ -166,14 +180,17 @@
         <env name="JRUBY_OPTS" value="-X+O" />
       </envs>
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/irc/irc_register_user_test.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/test/irc/irc_register_user_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/irc/irc_keep_connection_alive_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/test/irc/irc_keep_connection_alive_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_register_user$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_test$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
@@ -184,10 +201,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: irc-client" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.IrcKeepConnectionAliveTest" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_test" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.IrcListChannelsTest" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_list_channels" />
-        <item itemvalue="Ruby.irc_client" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_register_user" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +221,7 @@
       <workItem from="1690285376964" duration="2939000" />
       <workItem from="1690289289380" duration="74000" />
       <workItem from="1690289428498" duration="3681000" />
-      <workItem from="1690640794462" duration="3256000" />
+      <workItem from="1690640794462" duration="4791000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1690276376505</created>
@@ -458,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690643924873</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="reuse method">
+      <created>1690644065082</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1690644065082</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="open irc connection" />
     <MESSAGE value="extract class" />
     <MESSAGE value="extract constructor" />
     <MESSAGE value="rm" />
@@ -501,7 +524,8 @@
     <MESSAGE value="xm" />
     <MESSAGE value="reuse" />
     <MESSAGE value="ide s" />
-    <option name="LAST_COMMIT_MESSAGE" value="ide s" />
+    <MESSAGE value="reuse method" />
+    <option name="LAST_COMMIT_MESSAGE" value="reuse method" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/irc_client@test_no_connection_for_invalid_port.rcov" NAME="test_no_connection_for_invalid_port Coverage Results" MODIFIED="1690283249232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
@@ -510,7 +534,8 @@
     <SUITE FILE_PATH="coverage/irc_client@irc_client.rcov" NAME="irc_client Coverage Results" MODIFIED="1690641170079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_register_test_rb__1_.rcov" NAME="irc_register_test.rb (1) Coverage Results" MODIFIED="1690294215305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_list_channels.rcov" NAME="test_list_channels Coverage Results" MODIFIED="1690641376819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
-    <SUITE FILE_PATH="coverage/irc_client@All_tests_in_test__irc_client.rcov" NAME="All tests in test: irc-client Coverage Results" MODIFIED="1690644010578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@IrcKeepConnectionAliveTest.rcov" NAME="IrcKeepConnectionAliveTest Coverage Results" MODIFIED="1690645212957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@All_tests_in_test__irc_client.rcov" NAME="All tests in test: irc-client Coverage Results" MODIFIED="1690645251390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_successful_connection.rcov" NAME="test_successful_connection Coverage Results" MODIFIED="1690638071242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_avoid_disconnection.rcov" NAME="test_avoid_disconnection Coverage Results" MODIFIED="1690396860691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_register_user.rcov" NAME="test_register_user Coverage Results" MODIFIED="1690640274440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
@@ -525,6 +550,7 @@
     <SUITE FILE_PATH="coverage/irc_client@irc_connect_test_rb.rcov" NAME="irc_connect_test.rb Coverage Results" MODIFIED="1690283918166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_client_connects.rcov" NAME="test_client_connects Coverage Results" MODIFIED="1690638373247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_connect_test_rb__1_.rcov" NAME="irc_connect_test.rb (1) Coverage Results" MODIFIED="1690285504836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@test_test.rcov" NAME="test_test Coverage Results" MODIFIED="1690644270273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_invalid_port.rcov" NAME="test_invalid_port Coverage Results" MODIFIED="1690639248791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@avoid_disconnection_test_rb.rcov" NAME="avoid_disconnection_test.rb Coverage Results" MODIFIED="1690394982833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_register_user_test_rb.rcov" NAME="irc_register_user_test.rb Coverage Results" MODIFIED="1690639900017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
