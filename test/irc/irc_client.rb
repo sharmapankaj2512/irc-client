@@ -30,7 +30,7 @@ class IrcClient
   end
 
   def has_channels
-    @socket.puts("LIST")
+    send_command "LIST"
     channels = read_lines_until(":End of /LIST")
     channels.length.positive?
   end
@@ -39,10 +39,8 @@ class IrcClient
     @socket.eof?
   end
 
-  private
-
-  def send_command(string_frozen_)
-    @socket.puts string_frozen_
+  def send_command(command)
+    @socket.puts command
   end
 
   def replied_with_notice
@@ -51,7 +49,7 @@ class IrcClient
 
   def read_lines_until(string_frozen_)
     lines = []
-    until @socket.eof?
+    until no_more_messages
       line = @socket.gets
       lines.append(line)
       break if line.include?(string_frozen_)
