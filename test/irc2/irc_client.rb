@@ -49,4 +49,16 @@ class IrcClientAsync
     @client_messages.push(message)
     @registered = wait_for_registration
   end
+
+  def wait_for_channels
+    while (reply = @server_replies.pop)
+      puts reply
+      return true if reply.include? ":End of /LIST"
+    end
+  end
+
+  def has_channels
+    @client_messages.push("LIST")
+    wait_for_channels
+  end
 end

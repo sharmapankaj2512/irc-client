@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="async client">
-      <change afterPath="$PROJECT_DIR$/test/irc2/irc_client.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/irc2/irc_register_user_test.rb" afterDir="false" />
+    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="user registration">
+      <change afterPath="$PROJECT_DIR$/test/irc2/irs_list_channels_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/irc2/irc_connect_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/irc2/irc_connect_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/irc2/irc_client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/irc2/irc_client.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +14,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Minitest" />
         <option value="Ruby File" />
+        <option value="Minitest" />
       </list>
     </option>
   </component>
@@ -55,7 +54,7 @@
       <recent name="$PROJECT_DIR$/test/irc2" />
     </key>
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_user_registration">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_channels">
     <configuration type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="irc-client" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
@@ -118,7 +117,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="IrcKeepConnectionAliveTest" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="test_channels" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="irc-client" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Ilib:test" />
@@ -138,10 +137,10 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/irc/irc_keep_connection_alive_test.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/test/irc/irc_keep_connection_alive_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/irc2/irs_list_channels_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/test/irc2/irs_list_channels_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^IrcKeepConnectionAliveTest(#|::)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_channels$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
@@ -244,11 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_channels" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_user_registration" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_server_connection" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.test_server_connection" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: irc-client" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.IrcKeepConnectionAliveTest" />
       </list>
     </recent_temporary>
   </component>
@@ -533,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690710140763</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="user registration">
+      <created>1690714565906</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1690714565906</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="extract constructor" />
     <MESSAGE value="rm" />
     <MESSAGE value="tell don't ask" />
     <MESSAGE value="rt" />
@@ -576,7 +581,8 @@
     <MESSAGE value="ide s" />
     <MESSAGE value="reuse method" />
     <MESSAGE value="async client" />
-    <option name="LAST_COMMIT_MESSAGE" value="async client" />
+    <MESSAGE value="user registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="user registration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,6 +623,7 @@
     <SUITE FILE_PATH="coverage/irc_client@irc_register_user_test_rb.rcov" NAME="irc_register_user_test.rb Coverage Results" MODIFIED="1690639900017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_connect_test_rb__1_.rcov" NAME="irc_connect_test.rb (1) Coverage Results" MODIFIED="1690285504836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_successful_connection.rcov" NAME="test_successful_connection Coverage Results" MODIFIED="1690638071242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@test_channels.rcov" NAME="test_channels Coverage Results" MODIFIED="1690715491881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@IrcListChannelsTest.rcov" NAME="IrcListChannelsTest Coverage Results" MODIFIED="1690642217660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@IrcKeepConnectionAliveTest.rcov" NAME="IrcKeepConnectionAliveTest Coverage Results" MODIFIED="1690645212957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_client_connect.rcov" NAME="test_client_connect Coverage Results" MODIFIED="1690639087276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
