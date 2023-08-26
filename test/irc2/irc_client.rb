@@ -16,8 +16,8 @@ class IrcClientAsync
       loop do
         if @socket.wait_readable(0.2)
           line = @socket.gets
-          if line.start_with?("PING")
-            server = line.split(":").last
+          if is_pong(line)
+            server = server_name_from_pong_message(line)
             @socket.puts "PONG :#{server}"
           else
             @server_replies.push(line)
@@ -63,5 +63,15 @@ class IrcClientAsync
   def has_channels
     @client_messages.push("LIST")
     wait_for_channels
+  end
+
+  private
+
+  def server_name_from_pong_message(line)
+    line.split(":").last
+  end
+
+  def is_pong(line)
+    line.start_with?("PING")
   end
 end
