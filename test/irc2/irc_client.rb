@@ -15,12 +15,12 @@ class IrcClientAsync
     Thread.new do
       loop do
         if @socket.wait_readable(0.2)
-          line = @socket.gets
-          if is_pong(line)
-            server = server_name_from_pong_message(line)
+          response = @socket.gets
+          if is_pong(response)
+            server = server_name_from_pong_message(response)
             @socket.puts "PONG :#{server}"
           else
-            @server_replies.push(line)
+            @server_replies.push(response)
           end
 
         else
