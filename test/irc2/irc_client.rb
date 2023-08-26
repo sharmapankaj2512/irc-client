@@ -71,7 +71,7 @@ class IrcClientAsync
     line.split(":").last
   end
 
-  def is_pong(line)
-    line.start_with?("PING")
+  def is_pong(response)
+    response.start_with?("PING")
   end
 end
