@@ -16,7 +16,13 @@ class IrcClientAsync
       loop do
         if @socket.wait_readable(0.2)
           line = @socket.gets
-          @server_replies.push(line)
+          if line.start_with?("PING")
+            server = line.split(":").last
+            @socket.puts "PONG :#{server}"
+          else
+            @server_replies.push(line)
+          end
+
         else
           begin
             message = @client_messages.pop(true)
@@ -33,13 +39,11 @@ class IrcClientAsync
     lines += @server_replies.pop
     lines += @server_replies.pop
     lines += @server_replies.pop
-    puts lines
     lines.include? "NOTICE"
   end
 
   def wait_for_registration
     while (reply = @server_replies.pop)
-      puts reply
       return true if reply.include? ":End of /MOTD command"
     end
   end
@@ -52,7 +56,6 @@ class IrcClientAsync
 
   def wait_for_channels
     while (reply = @server_replies.pop)
-      puts reply
       return true if reply.include? ":End of /LIST"
     end
   end
