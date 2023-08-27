@@ -72,6 +72,6 @@ class IrcClientAsync
   end
 
   def is_pong(response)
-    response.start_with?("PING")
+    !response.nil? && response.start_with?("PING")
   end
 end
