@@ -20,10 +20,10 @@ class IrcClientAsync
   def register(nickname)
     message = "NICK #{nickname}\nUSER #{nickname} 0 * : #{nickname}"
     @two_way_socket.send(message)
-    @registered = wait_for(":End of /MOTD command")
+    @registered = listen_for(":End of /MOTD command")
   end
 
-  def wait_for(token)
+  def listen_for(token)
     while (reply = @server_replies.pop)
       return true if reply.include? token
     end
@@ -31,7 +31,7 @@ class IrcClientAsync
 
   def has_channels
     @two_way_socket.send("LIST")
-    wait_for ":End of /LIST"
+    listen_for ":End of /LIST"
   end
 
   private
