@@ -15,22 +15,14 @@ class TwoWaySocket
   def read_write_loop
     Thread.new do
       loop do
-        if @socket.wait_readable(0.2)
-          response = @socket.gets
-          if @client.approve_immediate response
-            @client.respond_to response
-          else
-            @server_replies.push(response)
-          end
-
-        else
-          begin
-            message = @client_messages.pop(true)
-            @socket.puts message
-          rescue ThreadError
-          end
-        end
+        readable ? read : write
       end
+    end
+  end
+
+  def listen_for(token)
+    while (reply = @server_replies.pop)
+      return true if reply.include? token
     end
   end
 
@@ -38,9 +30,27 @@ class TwoWaySocket
     @client_messages.push(message)
   end
 
-  def listen_for(token)
-    while (reply = @server_replies.pop)
-      return true if reply.include? token
+
+  private
+
+  def readable
+    @socket.wait_readable(0.2)
+  end
+
+  def write
+    begin
+      message = @client_messages.pop(true)
+      @socket.puts message
+    rescue ThreadError
+    end
+  end
+
+  def read
+    response = @socket.gets
+    if @client.approve_immediate response
+      @client.respond_to response
+    else
+      @server_replies.push(response)
     end
   end
 end
