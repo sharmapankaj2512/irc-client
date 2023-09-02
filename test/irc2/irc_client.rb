@@ -5,8 +5,8 @@ class IrcClientAsync
 
   def initialize(host, port)
     @two_way_socket = TwoWaySocket.new
-    @server_replies = Queue.new
-    @client_messages = Queue.new
+    @server_replies = @two_way_socket.server_replies
+    @client_messages = @two_way_socket.client_messages
     @socket = TCPSocket.new(host, port)
     read_write_loop
     @connected = wait_for_connection
