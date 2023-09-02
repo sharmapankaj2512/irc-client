@@ -6,7 +6,6 @@ class IrcClientAsync
   def initialize(host, port)
     @two_way_socket = TwoWaySocket.new(host, port)
     @server_replies = @two_way_socket.server_replies
-    @client_messages = @two_way_socket.client_messages
     @socket = @two_way_socket.socket
     @two_way_socket.read_write_loop
     @connected = wait_for_connection
@@ -22,7 +21,7 @@ class IrcClientAsync
 
   def register(nickname)
     message = "NICK #{nickname}\nUSER #{nickname} 0 * : #{nickname}"
-    send_command(message)
+    @two_way_socket.send(message)
     @registered = wait_for(":End of /MOTD command")
   end
 
@@ -33,15 +32,11 @@ class IrcClientAsync
   end
 
   def has_channels
-    send_command("LIST")
+    @two_way_socket.send("LIST")
     wait_for ":End of /LIST"
   end
 
   private
-
-  def send_command(message)
-    @two_way_socket.send(message)
-  end
 
   def server_name_from_pong_message(line)
     line.split(":").last
