@@ -1,9 +1,10 @@
 require "minitest/autorun"
 require_relative "irc_client"
+require 'singleton'
 
 class IrcConnectTest < Minitest::Test
   def test_server_connection
-    FakeIrcServer.new
+    FakeIrcServer.instance
 
     client = PersistentIrcClient.new("localhost", 6667)
 
@@ -12,6 +13,8 @@ class IrcConnectTest < Minitest::Test
 end
 
 class FakeIrcServer
+  include Singleton
+
   def initialize
     @socket = TCPServer.new("localhost", 6667)
     Thread.new do
