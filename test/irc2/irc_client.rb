@@ -8,31 +8,8 @@ class IrcClientAsync
     @server_replies = @two_way_socket.server_replies
     @client_messages = @two_way_socket.client_messages
     @socket = @two_way_socket.socket
-    read_write_loop(@socket, @server_replies, @client_messages)
+    @two_way_socket.read_write_loop(@socket, @server_replies, @client_messages)
     @connected = wait_for_connection
-  end
-
-  def read_write_loop(socket1, server_replies1, client_messages1)
-    Thread.new do
-      loop do
-        if socket1.wait_readable(0.2)
-          response = socket1.gets
-          if is_pong(response)
-            server = server_name_from_pong_message(response)
-            socket1.puts "PONG :#{server}"
-          else
-            server_replies1.push(response)
-          end
-
-        else
-          begin
-            message = client_messages1.pop(true)
-            socket1.puts message
-          rescue ThreadError
-          end
-        end
-      end
-    end
   end
 
   def wait_for_connection
@@ -65,10 +42,6 @@ class IrcClientAsync
   def server_name_from_pong_message(line)
     line.split(":").last
   end
-
-  def is_pong(response)
-    !response.nil? && response.start_with?("PING")
-  end
 end
 
 class TwoWaySocket
@@ -78,5 +51,32 @@ class TwoWaySocket
     @server_replies = Queue.new
     @client_messages = Queue.new
     @socket = TCPSocket.new(host, port)
+  end
+
+  def read_write_loop(socket1, server_replies1, client_messages1)
+    Thread.new do
+      loop do
+        if socket1.wait_readable(0.2)
+          response = socket1.gets
+          if is_pong(response)
+            server = server_name_from_pong_message(response)
+            socket1.puts "PONG :#{server}"
+          else
+            server_replies1.push(response)
+          end
+
+        else
+          begin
+            message = client_messages1.pop(true)
+            socket1.puts message
+          rescue ThreadError
+          end
+        end
+      end
+    end
+  end
+
+  def is_pong(response)
+    !response.nil? && response.start_with?("PING")
   end
 end
