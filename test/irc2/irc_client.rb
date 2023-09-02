@@ -45,14 +45,14 @@ class IrcClientAsync
   def register(nickname)
     message = "NICK #{nickname}\nUSER #{nickname} 0 * : #{nickname}"
     @client_messages.push(message)
-    @registered = wait_for_registration(":End of /MOTD command")
+    @registered = wait_for(":End of /MOTD command")
   end
 
   def wait_for_channels(token)
-    wait_for_registration token
+    wait_for token
   end
 
-  def wait_for_registration(token)
+  def wait_for(token)
     while (reply = @server_replies.pop)
       return true if reply.include? token
     end
