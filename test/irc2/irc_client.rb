@@ -49,9 +49,7 @@ class IrcClientAsync
   end
 
   def wait_for_channels(token)
-    while (reply = @server_replies.pop)
-      return true if reply.include? token
-    end
+    wait_for_registration token
   end
 
   def wait_for_registration(token)
