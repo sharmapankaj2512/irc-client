@@ -4,6 +4,7 @@ class IrcClientAsync
   attr_reader :connected, :registered
 
   def initialize(host, port)
+    @two_way_socket = TwoWaySocket.new
     @server_replies = Queue.new
     @client_messages = Queue.new
     @socket = TCPSocket.new(host, port)
@@ -68,4 +69,8 @@ class IrcClientAsync
   def is_pong(response)
     !response.nil? && response.start_with?("PING")
   end
+end
+
+class TwoWaySocket
+
 end
