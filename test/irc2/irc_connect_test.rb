@@ -23,8 +23,7 @@ class FakeIrcServer
     @socket = TCPServer.new("localhost", 6667)
     Thread.new do
       loop do
-        client = @socket.accept
-        handle_client(client)
+        handle_client(@socket.accept)
       end
     end
   end
