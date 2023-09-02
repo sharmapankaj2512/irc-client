@@ -8,7 +8,7 @@ class IrcClientAsync
     @server_replies = @two_way_socket.server_replies
     @client_messages = @two_way_socket.client_messages
     @socket = @two_way_socket.socket
-    @two_way_socket.read_write_loop(@socket, @server_replies, @client_messages)
+    @two_way_socket.read_write_loop
     @connected = wait_for_connection
   end
 
@@ -53,22 +53,22 @@ class TwoWaySocket
     @socket = TCPSocket.new(host, port)
   end
 
-  def read_write_loop(socket1, server_replies1, client_messages1)
+  def read_write_loop
     Thread.new do
       loop do
-        if socket1.wait_readable(0.2)
-          response = socket1.gets
+        if @socket.wait_readable(0.2)
+          response = @socket.gets
           if is_pong(response)
             server = server_name_from_pong_message(response)
-            socket1.puts "PONG :#{server}"
+            @socket.puts "PONG :#{server}"
           else
-            server_replies1.push(response)
+            @server_replies.push(response)
           end
 
         else
           begin
-            message = client_messages1.pop(true)
-            socket1.puts message
+            message = @client_messages.pop(true)
+            @socket.puts message
           rescue ThreadError
           end
         end
