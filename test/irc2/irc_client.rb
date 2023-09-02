@@ -42,12 +42,6 @@ class IrcClientAsync
     lines.include? "NOTICE"
   end
 
-  def wait_for_registration
-    while (reply = @server_replies.pop)
-      return true if reply.include? ":End of /MOTD command"
-    end
-  end
-
   def register(nickname)
     message = "NICK #{nickname}\nUSER #{nickname} 0 * : #{nickname}"
     @client_messages.push(message)
@@ -57,6 +51,12 @@ class IrcClientAsync
   def wait_for_channels
     while (reply = @server_replies.pop)
       return true if reply.include? ":End of /LIST"
+    end
+  end
+
+  def wait_for_registration
+    while (reply = @server_replies.pop)
+      return true if reply.include? ":End of /MOTD command"
     end
   end
 
