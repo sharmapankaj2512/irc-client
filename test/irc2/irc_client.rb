@@ -72,5 +72,10 @@ class IrcClientAsync
 end
 
 class TwoWaySocket
+  attr_reader :server_replies, :client_messages
 
+  def initialize
+    @server_replies = Queue.new
+    @client_messages = Queue.new
+  end
 end
