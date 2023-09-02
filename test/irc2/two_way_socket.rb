@@ -8,6 +8,7 @@ class TwoWaySocket
     @server_replies = Queue.new
     @client_messages = Queue.new
     @socket = TCPSocket.new(host, port)
+    read_write_loop
   end
 
   def read_write_loop

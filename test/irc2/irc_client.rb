@@ -5,7 +5,6 @@ class PersistentIrcClient
 
   def initialize(host, port)
     @two_way_socket = TwoWaySocket.new(host, port)
-    @two_way_socket.read_write_loop
     @connected = wait_for_connection
   end
 
