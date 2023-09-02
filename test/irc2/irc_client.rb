@@ -1,4 +1,5 @@
 require_relative 'two_way_socket'
+
 class IrcClientAsync
   attr_reader :connected, :registered
 
@@ -10,11 +11,7 @@ class IrcClientAsync
   end
 
   def wait_for_connection
-    lines = ""
-    lines += @server_replies.pop
-    lines += @server_replies.pop
-    lines += @server_replies.pop
-    lines.include? "NOTICE"
+    @two_way_socket.listen_for("NOTICE")
   end
 
   def register(nickname)
