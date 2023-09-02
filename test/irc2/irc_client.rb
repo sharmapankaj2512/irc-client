@@ -4,10 +4,10 @@ class IrcClientAsync
   attr_reader :connected, :registered
 
   def initialize(host, port)
-    @two_way_socket = TwoWaySocket.new
+    @two_way_socket = TwoWaySocket.new(host, port)
     @server_replies = @two_way_socket.server_replies
     @client_messages = @two_way_socket.client_messages
-    @socket = TCPSocket.new(host, port)
+    @socket = @two_way_socket.socket
     read_write_loop
     @connected = wait_for_connection
   end
@@ -72,10 +72,11 @@ class IrcClientAsync
 end
 
 class TwoWaySocket
-  attr_reader :server_replies, :client_messages
+  attr_reader :server_replies, :client_messages, :socket
 
-  def initialize
+  def initialize(host, port)
     @server_replies = Queue.new
     @client_messages = Queue.new
+    @socket = TCPSocket.new(host, port)
   end
 end
