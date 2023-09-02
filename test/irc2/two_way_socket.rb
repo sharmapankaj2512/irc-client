@@ -40,4 +40,10 @@ class TwoWaySocket
   def is_pong(response)
     !response.nil? && response.start_with?("PING")
   end
+
+  def listen_for(token)
+    while (reply = @server_replies.pop)
+      return true if reply.include? token
+    end
+  end
 end
