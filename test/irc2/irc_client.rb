@@ -48,10 +48,6 @@ class IrcClientAsync
     @registered = wait_for(":End of /MOTD command")
   end
 
-  def wait_for_channels(token)
-    wait_for token
-  end
-
   def wait_for(token)
     while (reply = @server_replies.pop)
       return true if reply.include? token
@@ -60,7 +56,7 @@ class IrcClientAsync
 
   def has_channels
     @client_messages.push("LIST")
-    wait_for_channels(":End of /LIST")
+    wait_for ":End of /LIST"
   end
 
   private
