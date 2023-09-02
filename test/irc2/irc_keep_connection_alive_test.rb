@@ -3,7 +3,7 @@ require_relative "irc_client"
 
 class IrcKeepConnectionAliveTest < Minitest::Test
   def test_stay_alive
-    client = IrcClientAsync.new("irc.libera.chat", 6667)
+    client = PersistentIrcClient.new("irc.libera.chat", 6667)
     client.register("random_231123")
 
     sleep(to_seconds(minutes(5)))

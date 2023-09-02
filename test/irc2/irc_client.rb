@@ -1,6 +1,6 @@
 require_relative 'two_way_socket'
 
-class IrcClientAsync
+class PersistentIrcClient
   attr_reader :connected, :registered
 
   def initialize(host, port)
