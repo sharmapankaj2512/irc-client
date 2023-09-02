@@ -4,8 +4,21 @@ class PersistentIrcClient
   attr_reader :connected, :registered
 
   def initialize(host, port)
-    @two_way_socket = TwoWaySocket.new(host, port)
+    @two_way_socket = TwoWaySocket.new(host, port, self)
     @connected = wait_for_connection
+  end
+
+  def approve_immediate(response_request)
+    is_pong response_request
+  end
+
+  def respond_to(response_request)
+    server = server_name_from_pong_message(response_request)
+    @two_way_socket.send "PONG :#{server}"
+  end
+
+  def is_pong(response)
+    !response.nil? && response.start_with?("PING")
   end
 
   def wait_for_connection

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="mm">
+    <list default="true" id="6f8af148-f658-4ae7-8720-6cf1282b4168" name="Changes" comment="tell don't ask">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/irc2/irc_client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/irc2/irc_client.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/irc2/two_way_socket.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/irc2/two_way_socket.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
         <option value="Ruby File" />
         <option value="Minitest" />
         <option value="Ruby Class" />
+        <option value="RBS Class" />
       </list>
     </option>
   </component>
@@ -212,10 +215,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Test::Unit/Shoulda/Minitest.irc_connect_test and 2 more" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_stay_alive" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in irc2: irc-client" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.IrsListChannelsTest" />
         <item itemvalue="Ruby.irc_client" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_stay_alive" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +245,7 @@
       <workItem from="1692280492275" duration="8200000" />
       <workItem from="1693030909930" duration="465000" />
       <workItem from="1693031378556" duration="7179000" />
-      <workItem from="1693629653423" duration="3966000" />
+      <workItem from="1693629653423" duration="6141000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1690276376505</created>
@@ -524,38 +527,6 @@
       <option name="project" value="LOCAL" />
       <updated>1690715517279</updated>
     </task>
-    <task id="LOCAL-00055" summary="xp">
-      <option name="closed" value="true" />
-      <created>1693631927971</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1693631927971</updated>
-    </task>
-    <task id="LOCAL-00056" summary="mm">
-      <option name="closed" value="true" />
-      <created>1693632212968</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1693632212968</updated>
-    </task>
-    <task id="LOCAL-00057" summary="rp">
-      <option name="closed" value="true" />
-      <created>1693632344838</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1693632344838</updated>
-    </task>
-    <task id="LOCAL-00058" summary="xm">
-      <option name="closed" value="true" />
-      <created>1693638982044</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1693638982044</updated>
-    </task>
     <task id="LOCAL-00059" summary="unused field">
       <option name="closed" value="true" />
       <created>1693639081178</created>
@@ -596,7 +567,39 @@
       <option name="project" value="LOCAL" />
       <updated>1693639497745</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="remove duplication">
+      <option name="closed" value="true" />
+      <created>1693639607891</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1693639607891</updated>
+    </task>
+    <task id="LOCAL-00065" summary="unused variable">
+      <option name="closed" value="true" />
+      <created>1693639680756</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1693639680756</updated>
+    </task>
+    <task id="LOCAL-00066" summary="rc">
+      <option name="closed" value="true" />
+      <created>1693639782200</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1693639782200</updated>
+    </task>
+    <task id="LOCAL-00067" summary="tell don't ask">
+      <option name="closed" value="true" />
+      <created>1693639879812</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1693639879812</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,9 +617,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="move print logic" />
-    <MESSAGE value="reuse" />
-    <MESSAGE value="ide s" />
     <MESSAGE value="reuse method" />
     <MESSAGE value="async client" />
     <MESSAGE value="user registration" />
@@ -626,7 +626,6 @@
     <MESSAGE value="nil check" />
     <MESSAGE value="format" />
     <MESSAGE value="remove duplicaiton" />
-    <MESSAGE value="remove duplication" />
     <MESSAGE value="new class" />
     <MESSAGE value="move fields" />
     <MESSAGE value="use fields" />
@@ -639,7 +638,11 @@
     <MESSAGE value="remove unused variable" />
     <MESSAGE value="rm" />
     <MESSAGE value="mm" />
-    <option name="LAST_COMMIT_MESSAGE" value="mm" />
+    <MESSAGE value="remove duplication" />
+    <MESSAGE value="unused variable" />
+    <MESSAGE value="rc" />
+    <MESSAGE value="tell don't ask" />
+    <option name="LAST_COMMIT_MESSAGE" value="tell don't ask" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -675,13 +678,13 @@
     <SUITE FILE_PATH="coverage/irc_client@test_register_user.rcov" NAME="test_register_user Coverage Results" MODIFIED="1690640274440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@avoid_disconnection_test_rb.rcov" NAME="avoid_disconnection_test.rb Coverage Results" MODIFIED="1690394982833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_connection_remains_alive.rcov" NAME="test_connection_remains_alive Coverage Results" MODIFIED="1690637618436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
-    <SUITE FILE_PATH="coverage/irc_client@test_stay_alive.rcov" NAME="test_stay_alive Coverage Results" MODIFIED="1693036548392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@test_stay_alive.rcov" NAME="test_stay_alive Coverage Results" MODIFIED="1693641153272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_register_test_rb__1_.rcov" NAME="irc_register_test.rb (1) Coverage Results" MODIFIED="1690294215305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_avoid_disconnection.rcov" NAME="test_avoid_disconnection Coverage Results" MODIFIED="1690396860691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_connection.rcov" NAME="test_connection Coverage Results" MODIFIED="1690281610727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@test_client_connects.rcov" NAME="test_client_connects Coverage Results" MODIFIED="1690638373247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_connection_test_rb.rcov" NAME="irc_connection_test.rb Coverage Results" MODIFIED="1690639790884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
-    <SUITE FILE_PATH="coverage/irc_client@irc_connect_test_and_2_more.rcov" NAME="irc_connect_test and 2 more Coverage Results" MODIFIED="1693639557655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
+    <SUITE FILE_PATH="coverage/irc_client@irc_connect_test_and_2_more.rcov" NAME="irc_connect_test and 2 more Coverage Results" MODIFIED="1693641682121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@IrcKeepConnectionAliveTest.rcov" NAME="IrcKeepConnectionAliveTest Coverage Results" MODIFIED="1693031226432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@irc_connect_test_rb__1_.rcov" NAME="irc_connect_test.rb (1) Coverage Results" MODIFIED="1690285504836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />
     <SUITE FILE_PATH="coverage/irc_client@All_tests_in_irc2__irc_client.rcov" NAME="All tests in irc2: irc-client Coverage Results" MODIFIED="1693629837903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="irc-client" />

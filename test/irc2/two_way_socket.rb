@@ -4,10 +4,11 @@ require "socket"
 class TwoWaySocket
   attr_reader :server_replies, :client_messages, :socket
 
-  def initialize(host, port)
+  def initialize(host, port, client)
     @server_replies = Queue.new
     @client_messages = Queue.new
     @socket = TCPSocket.new(host, port)
+    @client = client
     read_write_loop
   end
 
@@ -16,9 +17,8 @@ class TwoWaySocket
       loop do
         if @socket.wait_readable(0.2)
           response = @socket.gets
-          if is_pong(response)
-            server = server_name_from_pong_message(response)
-            @socket.puts "PONG :#{server}"
+          if @client.approve_immediate response
+            @client.respond_to response
           else
             @server_replies.push(response)
           end
@@ -36,10 +36,6 @@ class TwoWaySocket
 
   def send(message)
     @client_messages.push(message)
-  end
-
-  def is_pong(response)
-    !response.nil? && response.start_with?("PING")
   end
 
   def listen_for(token)
